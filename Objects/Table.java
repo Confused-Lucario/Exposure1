@@ -8,18 +8,11 @@ package Objects;
 public class Table {
 
     // Attributes - (variables)
-    double height;
-    double width;
-    double weight;
-    double price;
-    double length;
-    double weightRating;
-    double topThickness;
-    int legs;
-    String material;
-    String color;
-    boolean mobile;
-    boolean foldable;
+    private double height;
+    private double width;
+    private double weight;
+    private double price;
+    private double length;
 
     // Default Constructor
     // name of the method is always the name of the class
@@ -29,13 +22,14 @@ public class Table {
         weight = 52;
         price = 50;
         length = 40;
-        weightRating = 120;
-        topThickness = 5;
-        legs = 4;
-        material = "wood";
-        color = "brown";
-        mobile = false;
-        foldable = false;
+    }
+
+    public Table(double height, double width, double weight, double price, double length) {
+        this.height = height;
+        this.width = width;
+        this.weight = weight;
+        this.price = price;
+        this.length = length;
     }
 
     // Getters/Accessors
@@ -59,31 +53,29 @@ public class Table {
         return length;
     }
 
-    public double getWeightRating() {
-        return weightRating;
+
+    public void setHeight(double height) {
+        this.height = height;
     }
 
-    public double getTopThickness() {
-        return topThickness;
+    public void setWidth(double width) {
+        this.width = width;
     }
 
-    public int getLegs() {
-        return legs;
+    public void setWeight(double weight) {
+        if(weight <= 1000) {
+            this.weight = weight;
+        } else {
+            this.weight = 1000.0;
+        }
     }
 
-    public String getMaterial() {
-        return material;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public String getColor() {
-        return color;
+    public void setLength(double length) {
+        this.length = length;
     }
 
-    public boolean isMobile() {
-        return mobile;
-    }
-
-    public boolean isFoldable() {
-        return foldable;
-    }
 }
