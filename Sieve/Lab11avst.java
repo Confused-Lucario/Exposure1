@@ -30,21 +30,32 @@ public class Lab11avst
         // start here
         for (int i = 2; i < primes.length; i++) {
             if (primes[i] == true) {
-                for (int k = 2; i < primes.length; i + i;) {
-
+                for (int k = 2; k * i < primes.length; k++) {
+                    primes[(i * k)] = false;
                 }
+
+
             }
         }
 
     }
 
-    public static void displayPrimes(boolean primes[])
-    {
+    public static void displayPrimes(boolean primes[]){
+
         System.out.println("\n\nPRIMES BETWEEN 1 AND "+ primes.length);
         // Output all values of the list
         for (int i = 2; i < primes.length; i++) {
             if (primes[i] == true) {
-                System.out.println(i + " ");
+                if (i < 10) {
+                    System.out.print("000" + i + " ");
+                } else if (i < 100) {
+                    System.out.print("00" + i + " ");
+                } else if (i < 1000){
+                    System.out.print("0" + i + " ");
+                } else {
+                    System.out.print(i + " ");
+                }
+
             }
         }
 
